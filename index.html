@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chunchu Bhanu Sri | Portfolio</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --bg-alt: #020617;
+      --card: #111827;
+      --accent: #38bdf8;
+      --accent-soft: rgba(56,189,248,0.15);
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --border: #1f2937;
+      --radius: 12px;
+      --shadow: 0 18px 45px rgba(15,23,42,0.7);
+      --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-main);
+      background: radial-gradient(circle at top, #1e293b 0, #020617 55%, #000 100%);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .page {
+      max-width: 1080px;
+      margin: 32px auto 40px;
+      padding: 0 16px 32px;
+    }
+
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 24px 24px 20px;
+      background: linear-gradient(135deg, #020617, #020617 40%, #0b1120 100%);
+      border-radius: 20px;
+      border: 1px solid rgba(148,163,184,0.24);
+      box-shadow: var(--shadow);
+      position: sticky;
+      top: 16px;
+      z-index: 20;
+      backdrop-filter: blur(16px);
+    }
+
+    .intro-main {
+      flex: 1 1 260px;
+    }
+
+    .name {
+      font-size: 1.9rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+
+    .role-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent-soft);
+      border-radius: 999px;
+      padding: 4px 12px;
+      margin: 10px 0 6px;
+      font-size: 0.8rem;
+      color: var(--accent);
+      border: 1px solid rgba(56,189,248,0.45);
+    }
+
+    .role-pill span {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px rgba(56,189,248,0.35);
+    }
+
+    .tagline {
+      font-size: 0.98rem;
+      color: var(--muted);
+      max-width: 430px;
+    }
+
+    .contact-block {
+      flex: 1 1 220px;
+      text-align: right;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .contact-block strong {
+      color: var(--text);
+    }
+
+    .contact-links {
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 8px;
+    }
+
+    .contact-links a {
+      background: rgba(15,23,42,0.9);
+      border-radius: 999px;
+      padding: 5px 11px;
+      border: 1px solid rgba(148,163,184,0.35);
+      font-size: 0.8rem;
+      white-space: nowrap;
+    }
+
+    .contact-links a:hover {
+      background: rgba(15,23,42,1);
+      text-decoration: none;
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    main {
+      margin-top: 26px;
+      display: grid;
+      grid-template-columns: minmax(0, 2.1fr) minmax(0, 1.2fr);
+      gap: 22px;
+    }
+
+    section {
+      background: radial-gradient(circle at top left, #0b1120 0, #020617 55%);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      padding: 18px 18px 16px;
+      box-shadow: 0 12px 30px rgba(15,23,42,0.7);
+    }
+
+    .section-title {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-pill {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+    }
+
+    .section-line {
+      height: 1px;
+      background: linear-gradient(90deg, var(--accent-soft), transparent);
+      margin-top: 6px;
+      margin-bottom: 10px;
+      border-radius: 999px;
+    }
+
+    .edu-item h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .edu-meta {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .edu-badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin: 6px 0 8px;
+    }
+
+    .badge {
+      font-size: 0.75rem;
+      border-radius: 999px;
+      padding: 3px 9px;
+      border: 1px solid rgba(148,163,184,0.45);
+      color: var(--muted);
+      background: rgba(15,23,42,0.9);
+    }
+
+    .badge-strong {
+      color: var(--accent);
+      border-color: rgba(56,189,248,0.7);
+      background: rgba(15,23,42,1);
+    }
+
+    .edu-list {
+      font-size: 0.86rem;
+      color: var(--muted);
+      margin-left: 16px;
+    }
+
+    .project {
+      border-radius: 14px;
+      padding: 12px 12px 10px;
+      background: radial-gradient(circle at top left, #020617 0, #020617 60%, #020617 100%);
+      border: 1px solid rgba(31,41,55,0.9);
+      margin-bottom: 10px;
+    }
+
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: baseline;
+      margin-bottom: 4px;
+    }
+
+    .project-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .project-tag {
+      font-size: 0.7rem;
+      padding: 2px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.55);
+      color: var(--muted);
+    }
+
+    .project ul {
+      margin-left: 16px;
+      font-size: 0.86rem;
+      color: var(--muted);
+    }
+
+    .project ul li {
+      margin-bottom: 3px;
+    }
+
+    .skill-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 10px;
+      margin-top: 4px;
+    }
+
+    .skill-card {
+      background: rgba(15,23,42,0.9);
+      border-radius: 10px;
+      padding: 8px 9px;
+      border: 1px solid rgba(31,41,55,0.9);
+    }
+
+    .skill-card h4 {
+      font-size: 0.82rem;
+      margin-bottom: 4px;
+      color: var(--text);
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+
+    .skill-tag {
+      font-size: 0.74rem;
+      padding: 3px 7px;
+      border-radius: 999px;
+      background: rgba(15,23,42,1);
+      border: 1px solid rgba(55,65,81,1);
+      color: var(--muted);
+    }
+
+    .skill-tag-strong {
+      border-color: rgba(56,189,248,0.9);
+      color: var(--accent);
+      background: rgba(15,23,42,1);
+    }
+
+    .cert-list,
+    .hack-list {
+      font-size: 0.86rem;
+      color: var(--muted);
+      margin-left: 16px;
+    }
+
+    .cert-list li,
+    .hack-list li {
+      margin-bottom: 6px;
+    }
+
+    .footer-line {
+      margin-top: 16px;
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-align: center;
+      opacity: 0.75;
+    }
+
+    @media (max-width: 900px) {
+      header {
+        position: static;
+      }
+      main {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .contact-block {
+        text-align: left;
+      }
+      .contact-links {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .page {
+        margin-top: 18px;
+      }
+      header {
+        padding: 18px 16px 16px;
+      }
+      .name {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="intro-main">
+        <div class="name">CHUNCHU BHANU SRI</div>
+        <div class="role-pill">
+          <span></span>
+          <div>Computer Science & Engineering • 2023–2027</div>
+        </div>
+        <p class="tagline">
+          Passionate CSE student interested in web building, cloud computing, and AI applications, actively learning through projects, certifications, and hackathons.
+        </p>
+      </div>
+      <div class="contact-block">
+        <div><strong>Email:</strong> bhanusrichunchu8@gmail.com</div>
+        <div><strong>Phone:</strong> +91 83674 96219</div>
+        <div>Jangaon, Telangana, India</div>
+        <div class="contact-links">
+          <a href="https://www.linkedin.com/in/bhanu-sri-chunchu-b56820310/" target="_blank">LinkedIn</a>
+          <a href="https://github.com/23h51a66n2-Bhanu" target="_blank">GitHub</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div>
+        <section id="education">
+          <div class="section-title">
+            Education
+            <span class="section-pill">Academics</span>
+          </div>
+          <div class="section-line"></div>
+
+          <div class="edu-item">
+            <h3>CMR College of Engineering & Technology, Hyderabad</h3>
+            <div class="edu-meta">
+              Bachelor of Technology in Computer Science and Engineering • 2023–2027
+            </div>
+            <div class="edu-badge-row">
+              <span class="badge badge-strong">GPA: 8.19 / 10</span>
+              <span class="badge">Hackathons & Workshops</span>
+            </div>
+            <ul class="edu-list">
+              <li>Relevant coursework: Data Structures, Algorithms, Operating Systems, Computer Networks, Natural Language Processing.</li>
+              <li>Activities: Participated in hackathons and technical workshops.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section id="projects" style="margin-top: 18px;">
+          <div class="section-title">
+            Projects
+            <span class="section-pill">Academic</span>
+          </div>
+          <div class="section-line"></div>
+
+          <div class="project">
+            <div class="project-header">
+              <div class="project-title">Geomark – Location-Based System</div>
+              <div class="project-tag">Academic Project</div>
+            </div>
+            <ul>
+              <li>Built a GeoMark system to mark, track, and manage geographic locations using GPS and mapping services.</li>
+              <li>Implemented real-time location tagging and interactive visualization on digital maps.</li>
+              <li>Enabled accurate geo-coordinate storage and retrieval for monitoring and analysis.</li>
+            </ul>
+          </div>
+        </section>
+      </div>
+
+      <div>
+        <section id="skills">
+          <div class="section-title">
+            Skills
+            <span class="section-pill">Technical & Soft</span>
+          </div>
+          <div class="section-line"></div>
+
+          <div class="skill-grid">
+            <div class="skill-card">
+              <h4>Programming</h4>
+              <div class="skill-tags">
+                <span class="skill-tag-strong">Python</span>
+              </div>
+            </div>
+
+            <div class="skill-card">
+              <h4>Web</h4>
+              <div class="skill-tags">
+                <span class="skill-tag-strong">HTML</span>
+                <span class="skill-tag-strong">CSS</span>
+              </div>
+            </div>
+
+            <div class="skill-card">
+              <h4>Database</h4>
+              <div class="skill-tags">
+                <span class="skill-tag-strong">SQL</span>
+              </div>
+            </div>
+
+            <div class="skill-card">
+              <h4>Core CS</h4>
+              <div class="skill-tags">
+                <span class="skill-tag">Data Structures & Algorithms</span>
+                <span class="skill-tag">Operating Systems</span>
+                <span class="skill-tag">DBMS</span>
+                <span class="skill-tag">Computer Networks</span>
+              </div>
+            </div>
+
+            <div class="skill-card">
+              <h4>Tools</h4>
+              <div class="skill-tags">
+                <span class="skill-tag-strong">Visual Studio Code</span>
+                <span class="skill-tag-strong">GitHub</span>
+              </div>
+            </div>
+
+            <div class="skill-card">
+              <h4>Other</h4>
+              <div class="skill-tags">
+                <span class="skill-tag">Communication</span>
+                <span class="skill-tag">Teamwork</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="certifications" style="margin-top: 18px;">
+          <div class="section-title">
+            Certifications
+            <span class="section-pill"></span>
+          </div>
+          <div class="section-line"></div>
+
+          <ul class="cert-list">
+            <li><strong>ServiceNow Certified System Adminstartor (CSA) - ServiceNow University</strong></li>
+            <li><strong>Service Certified Application Developer (CAD) - ServiceNow University </strong></li>
+            <li><strong>Build Intelligent Agent Using DeepSeek & N8n - Coursera </strong></li>
+            <li><strong>Salesforce Certified Agentforce Specialist - Salesforce </strong></li>
+            <li><strong>Artificial Intelligence and Machine Learning Concepts – Cisco Networking Academy</strong></li>
+            
+          </ul>
+        </section>
+
+        <section id="hackathons" style="margin-top: 18px;">
+          <div class="section-title">
+            Hackathons
+            <span class="section-pill">Experience</span>
+          </div>
+          <div class="section-line"></div>
+
+          <ul class="hack-list">
+            <li>
+              <strong>National Level AI Autonomous Hackathon 2025 – VRS Siddhartha, Vijayawada</strong>: Participated in a 48-hour hackathon focused on AI use-cases, teamwork, and solving real-world problems under time constraints.
+            </li>
+          </ul>
+        </section>
+      </div>
+    </main>
+
+    <div class="footer-line">
+      Designed & coded by CHUNCHU BHANU SRI • Open to internships and project collaborations.
+    </div>
+  </div>
+</body>
+</html>
