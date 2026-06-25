@@ -4,7 +4,7 @@ Welcome to my personal portfolio website! This site showcases my projects, skill
 
 ## Portfolio Link
 
-**Live Website:** https://23h51a66n2-bhanu.github.io/portfolio/
+**Live Website:** [https://bhanusrichunchu8-ui.github.io/Portfolio/]
 
 ## About Me
 
@@ -65,7 +65,7 @@ I am a passionate Computer Science & Engineering student at CMR College of Engin
 
 ## Repository Information
 
-- **Repository**: [23h51a66n2-Bhanu/portfolio](https://github.com/23h51a66n2-Bhanu/portfolio)
+- **Repository**: [https://bhanusrichunchu8-ui.github.io/Portfolio/]
 - **Hosted on**: GitHub Pages
 - **Technologies**: HTML5, CSS3, Responsive Design
 
@@ -79,7 +79,7 @@ I am a passionate Computer Science & Engineering student at CMR College of Engin
 
 ## How to Use
 
-1. Visit the [portfolio website](https://23h51a66n2-bhanu.github.io/portfolio/)
+1. Visit the [portfolio website](https://bhanusrichunchu8-ui.github.io/Portfolio/)
 2. Explore different sections to learn about my background, projects, and skills
 3. Use the contact links to reach out
 
