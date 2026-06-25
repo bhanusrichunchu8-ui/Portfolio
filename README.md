@@ -55,7 +55,6 @@ I am a passionate Computer Science & Engineering student at CMR College of Engin
 - **ServiceNow Certified Application Developer (CAD) - ServiceNow University
 - **Build Intelligent Agents Using DeepSeek & N8n - Coursera
 - **Salesforce Certified Agentforce Specialist - Salesforce
-- **Artificial Intelligence and Machine Learning Concepts** - Cisco Networking Academy
 
 ### Hackathons
 
